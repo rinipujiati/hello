@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itop_design xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0">
+  <constants>
+  </constants>
+  <classes>
+  </classes>
+  <menus>
+  </menus>
+  <user_rights>
+    <groups>
+	  <group id="UserRequest2" _delta="define">
+        <classes>
+          <class id="UserRequest"/>
+        </classes>
+      </group>
+	  <group id="Ticketing2" _delta="define">
+        <classes>
+          <class id="lnkFunctionalCIToTicket"/>
+          <class id="lnkContactToTicket"/>
+          <class id="WorkOrder"/>
+        </classes>
+      </group>
+	</groups>
+    <profiles>
+      <profile id="52" _delta="define">
+        <name>DXG Support Agent</name>
+        <description>User rights : Ticketing, Incident and UserRequest </description>
+        <groups>
+          <group id="Ticketing2">
+            <actions>
+              <action id="action:delete">allow</action>
+              <action id="action:write">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="stimulus:ev_close">allow</action>
+            </actions>
+          </group>
+          <group id="UserRequest2">
+            <actions>
+              <action id="action:write">allow</action>
+              <action id="action:bulk write">allow</action>
+              <action id="stimulus:ev_assign">allow</action>
+              <action id="stimulus:ev_reassign">allow</action>
+              <action id="stimulus:ev_resolve">allow</action>
+              <action id="stimulus:ev_close">allow</action>
+              <action id="stimulus:ev_pending">allow</action>
+              <action id="stimulus:ev_wait_for_approval">allow</action>
+            </actions>
+          </group>
+        </groups>
+      </profile>
+	</profiles>
+  </user_rights>
+</itop_design>
